@@ -24,3 +24,84 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Inter, Arial, sans-serif;
+}
+
+body {
+  background: #0f0f0f;
+  color: #ffffff;
+}
+
+.container {
+  width: 100%;
+}
+
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 56px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.7;
+}
+
+.projects {
+  padding: 80px 10%;
+}
+
+.projects h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+}
+
+.card img {
+  width: 100%;
+  display: block;
+}
+
+.card h3 {
+  padding: 16px;
+}
+
+.card p {
+  padding: 0 16px 24px;
+  opacity: 0.7;
+}
+
+.contact {
+  padding: 80px 10%;
+  background: #141414;
+}
