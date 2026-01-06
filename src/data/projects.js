@@ -29,6 +29,9 @@ export const projects = [
         media: [
             { type: "image", src: "/projects/break/1.png", caption: "yo" },
             { type: "image", src: "/projects/break/2.png", caption: "yo" },
+            { type: "image", src: "/projects/break/3.png", caption: "yo" },
+            { type: "image", src: "/projects/break/4.png", caption: "yo" },
+            { type: "image", src: "/projects/break/5.png", caption: "yo" },
         ],
     },
     {
