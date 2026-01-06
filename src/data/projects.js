@@ -27,8 +27,8 @@ export const projects = [
         cover: "/projects/break/cover.jpg",
         description: "Concept neon sign",
         media: [
-            { type: "image", src: "/projects/break/1.png", caption: "Neon concept front" },
-            { type: "image", src: "/projects/break/2.jpg", caption: "Side view" },
+            { type: "image", src: "/projects/break/1.png", caption: "yo" },
+            { type: "image", src: "/projects/break/2.png", caption: "yo" },
         ],
     },
     {
