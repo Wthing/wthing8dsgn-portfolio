@@ -50,8 +50,11 @@ export const projects = [
         cover: "/projects/obsidian-knife/cover.jpg",
         description: "Obsidian Knife Model",
         media: [
-            { type: "image", src: "/projects/obsidian-knife/1.jpg", caption: "Full view" },
-            { type: "image", src: "/projects/obsidian-knife/2.jpg", caption: "Close-up details" },
+            { type: "image", src: "/projects/obsidian-knife/1.png", caption: "Full view" },
+            { type: "image", src: "/projects/obsidian-knife/2.png", caption: "Close-up details" },
+            { type: "image", src: "/projects/obsidian-knife/3.png", caption: "Close-up details" },
+            { type: "image", src: "/projects/obsidian-knife/4.png", caption: "Close-up details" },
+            { type: "image", src: "/projects/obsidian-knife/5.png", caption: "Close-up details" },
         ],
     },
     {
