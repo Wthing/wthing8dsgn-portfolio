@@ -1,4 +1,3 @@
-// src/app/page.js
 import { projects } from "@/data/projects";
 import HeroParticles from "@/components/HeroParticles";
 import ProjectGallery from "@/components/ProjectGallery";
@@ -6,7 +5,6 @@ import ProjectGallery from "@/components/ProjectGallery";
 export default function Home() {
     return (
         <main className="bg-black text-white">
-
             <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 bg-gray-900 bg-[url('/patterns/dots.svg')] bg-repeat">
                 <HeroParticles />
                 <div className="relative z-10">
@@ -19,7 +17,6 @@ export default function Home() {
                 <h2 className="text-4xl font-bold mb-12 text-center">Projects</h2>
                 <ProjectGallery projects={projects} />
             </section>
-
         </main>
     );
 }
