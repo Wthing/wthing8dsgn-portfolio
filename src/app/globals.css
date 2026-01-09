@@ -93,3 +93,10 @@ body {
   animation: slowMove 60s linear infinite;
 }
 
+/* globals.css */
+.font-empires {
+  font-family: 'Empires', sans-serif;
+}
+
+
+

@@ -16,16 +16,19 @@ export default async function ProjectPage({ params }) {
     }
 
     return (
-        <main className="bg-black text-white min-h-screen px-6 py-16">
+        <main className="bg-black text-white min-h-screen px-6 py-16 flex flex-col items-center">
             <h1 className="text-5xl font-bold mb-6 text-center">
                 {project.title}
             </h1>
 
-            <p className="text-xl opacity-70 mb-16 text-center max-w-3xl mx-auto">
-                {project.description}
-            </p>
+            <div className="max-w-3xl text-center mb-16">
+                <p className="text-xl opacity-70">
+                    {project.description}
+                </p>
+            </div>
 
             <ProjectMediaGrid media={project.media} />
         </main>
+
     );
 }

@@ -40,8 +40,8 @@ export default function ProjectMediaGrid({ media }) {
                                     className="
                     w-full h-auto object-cover
                     transition-all duration-500
-                    group-hover:blur-[3px]
-                    group-hover:scale-105
+                    group-hover:scale-[1.03]
+            group-hover:blur-sm
                   "
                                 />
                             )}
@@ -52,20 +52,23 @@ export default function ProjectMediaGrid({ media }) {
                                     className="
                     w-full h-auto object-cover
                     transition-all duration-500
-                    group-hover:blur-[3px]
-                    group-hover:scale-105
+                    group-hover:scale-[1.03]
+            group-hover:blur-sm
                   "
                                 />
                             )}
                             {item.caption && (
                                 <div className="
-                  absolute inset-0 flex items-center justify-center
-                  text-lg font-medium
-                  opacity-0 group-hover:opacity-100
-                  transition-opacity duration-300
-                  pointer-events-none
-                ">
-                                    {item.caption}
+          absolute inset-0
+          flex items-center justify-center
+          bg-black/40
+          opacity-0
+          group-hover:opacity-100
+          transition-opacity duration-300
+        ">
+                                    <h3 className="text-white text-lg font-bold text-center px-4">
+                                        {item.caption}
+                                    </h3>
                                 </div>
                             )}
                         </div>
