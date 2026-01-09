@@ -42,7 +42,7 @@ export default function ProjectGallery({ projects }) {
         <div className="relative">
             {/* Спиннер по центру экрана */}
             {loading && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70">
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black">
                     <div className="loader"></div>
                 </div>
             )}
