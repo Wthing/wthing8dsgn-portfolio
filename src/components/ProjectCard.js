@@ -1,3 +1,4 @@
+// src/components/ProjectCard.js
 "use client";
 
 import { useState, useEffect } from "react";
@@ -6,30 +7,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 export default function ProjectCard({ project }) {
     const [hovered, setHovered] = useState(false);
-    const [overlayVisible, setOverlayVisible] = useState(false);
     const [showSlideshow, setShowSlideshow] = useState(false);
     const [slideIndex, setSlideIndex] = useState(0);
-
-    // Предзагрузка всех медиа
-    useEffect(() => {
-        if (!project.media) return;
-
-        project.media.forEach((item) => {
-            if (item.type === "image" || item.type === "gif") {
-                const img = new Image();
-                img.src = item.src;
-            } else if (item.type === "video") {
-                const video = document.createElement("video");
-                video.src = item.src;
-                video.preload = "metadata"; // только метаданные, чтобы не грузить весь файл сразу
-            }
-        });
-    }, [project.media]);
-
-    // Показываем overlay сразу при наведении
-    useEffect(() => {
-        setOverlayVisible(hovered);
-    }, [hovered]);
 
     // Таймер появления слайдшоу через 2.5 секунды
     useEffect(() => {
@@ -38,24 +17,26 @@ export default function ProjectCard({ project }) {
             timeout = setTimeout(() => setShowSlideshow(true), 2500);
         } else {
             setShowSlideshow(false);
+            setSlideIndex(0);
         }
         return () => clearTimeout(timeout);
     }, [hovered]);
 
-    // Слайд-шоу при наведении
+    // Автоматическая смена слайдов
     useEffect(() => {
         if (!showSlideshow || !project.media || project.media.length <= 1) return;
 
         const interval = setInterval(() => {
-            setSlideIndex((prev) => (prev + 1) % project.media.length);
+            setSlideIndex(prev => (prev + 1) % project.media.length);
         }, 2000);
 
         return () => clearInterval(interval);
     }, [showSlideshow, project.media]);
 
-    const currentMedia = project.media && project.media.length > 0
-        ? project.media[slideIndex]
-        : null;
+    const currentMedia =
+        project.media && project.media.length > 0
+            ? project.media[slideIndex]
+            : null;
 
     return (
         <Link href={`/projects/${project.slug}`}>
@@ -81,8 +62,6 @@ export default function ProjectCard({ project }) {
                                     muted
                                     autoPlay
                                     loop
-                                    preload="metadata"
-                                    poster={currentMedia.poster || project.cover}
                                     className="w-full h-full object-contain"
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
@@ -113,9 +92,9 @@ export default function ProjectCard({ project }) {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                 />
 
-                {/* Overlay с текстом и стрелкой поверх всего */}
+                {/* Overlay с текстом, стрелкой и затемнением */}
                 <AnimatePresence>
-                    {overlayVisible && (
+                    {hovered && (
                         <motion.div
                             className="absolute inset-0 flex flex-col items-center justify-center text-center px-4 bg-black/50 pointer-events-none rounded-xl"
                             initial={{ opacity: 0 }}
